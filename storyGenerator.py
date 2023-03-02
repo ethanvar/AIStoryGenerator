@@ -1,7 +1,10 @@
 import openai
+from flask import Flask, session, render_template, request, g 
 
 # Set up the OpenAI API key
 openai.api_key = "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"
+
+
 
 def promptFunc(name, subject, genre):
     prompt = "Write a short " + genre + " story about " + subject + ". Let the main characters name be " + name 
