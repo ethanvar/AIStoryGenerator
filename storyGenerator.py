@@ -1,20 +1,28 @@
 import openai
 from flask import Flask, session, render_template, request, g 
 
+app = Flask(__name__)
+
 # Set up the OpenAI API key
 openai.api_key = "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"
 
+@app.route('/')
+def hello_world():
+    return render_template("generator.html")
 
-
-def promptFunc(name, subject, genre):
-    prompt = "Write a short " + genre + " story about " + subject + ". Let the main characters name be " + name 
+@app.route('/submit-form', methods=["POST"])
+def promptFunc():
+    prompt = "Write a short " + request.form['genre'] + " story about " + request.form['subject'] + ". Let the main characters name be " + request.form['name'] 
     # Call the OpenAI API to generate completion
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
         max_tokens=1000,
     )
+    data = response.choices[0].text
     print(response.choices[0].text)
+    if (data):
+        return render_template("generator.html", output = data)
 
 def main():
     print("answer each prompt in one word")
@@ -31,4 +39,7 @@ def main():
         satisfied = True
     satisfied = True'''
 
-main()
+'''main()'''
+
+if __name__ == '__main__':
+    app.run()
