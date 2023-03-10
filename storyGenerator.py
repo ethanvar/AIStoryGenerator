@@ -12,7 +12,9 @@ def hello_world():
 
 @app.route('/submit-form', methods=["POST"])
 def promptFunc():
-    prompt = "Write a short " + request.form['genre'] + " story about " + request.form['subject'] + ". Let the main characters name be " + request.form['name'] 
+    option = request.form['option']
+    print(option)
+    prompt = "Write a short story where the story genre is" + request.form['genre'] + ", the stories main event is: " + request.form['event'] + ", and let the main characters name be " + request.form['name'] + "Express this story " + option +"."
     # Call the OpenAI API to generate completion
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -24,22 +26,22 @@ def promptFunc():
     if (data):
         return render_template("generator.html", output = data)
 
-def main():
-    print("answer each prompt in one word")
-    satisfied = False
-    '''while(satisfied == False):'''
-    name = input("What is your name? ")
-    subject = input("What would you like to write a short story about? ")
-    genre = input("Name the genre of the story (horror, romance, comedy) ")
-    promptFunc(name, subject, genre)
-    '''done = input("Are you satisfied with the story? (y/n)")   
-    if done == "n":
-        promptFunc(name, subject, genre)
-    else:
-        satisfied = True
-    satisfied = True'''
+# def main():
+#     print("answer each prompt in one word")
+#     satisfied = False
+#     '''while(satisfied == False):'''
+#     name = input("What is your name? ")
+#     subject = input("What would you like to write a short story about? ")
+#     genre = input("Name the genre of the story (horror, romance, comedy) ")
+#     promptFunc(name, subject, genre)
+#     '''done = input("Are you satisfied with the story? (y/n)")   
+#     if done == "n":
+#         promptFunc(name, subject, genre)
+#     else:
+#         satisfied = True
+#     satisfied = True'''
 
-'''main()'''
+# '''main()'''
 
 if __name__ == '__main__':
     app.run()

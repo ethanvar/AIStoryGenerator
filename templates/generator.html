@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Story Generator</title>
+    <title>I Have a Story to Tell</title>
     <link rel="stylesheet" href="../static/css/generator.css" type="text/css">
   </head>
   <body>
     <h1 class="header">Story Generator</h1>
     <form action="/submit-form" method="post">
       <div class="form-container">
-        <label for="name">What is your protagonist's name?</label>
+        <label for="name">What happened to you?</label>
+        <textarea name="event" type="event" id="event" rows="4" cols="50"></textarea>
+        
+        <label for="name">What is your name?</label>
         <input type="text" name="name" id="name">
 
         <label for="genre">What genre would you like your story to be in?</label>
         <input type="genre" name="genre" id="genre">
 
-        <label for="subject">What will your story be about?</label>
-        <input type="subject" name="subject" id="subject">
+        <select id="option" name="option" value="option">
+          <option value="intellecually">Intellecually</option>
+          <option value="angrily">Angrily</option>
+          <option value="nonchalantly">Nonchalantly</option>
+          <option value="funnily">Funnily</option>
+        </select>
 
         <button type="submit">Submit</button>
       </div>
