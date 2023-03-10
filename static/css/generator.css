@@ -1,10 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.output-container {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
   
+
 label, input, textarea, button {
     margin: 10px 0;
 }
