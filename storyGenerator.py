@@ -14,7 +14,7 @@ def hello_world():
 def promptFunc():
     option = request.form['option']
     print(option)
-    prompt = "Write a short story where the story genre is" + request.form['genre'] + ", the stories main event is: " + request.form['event'] + ", and let the main characters name be " + request.form['name'] + "Express this story " + option +"."
+    prompt = "Write a short story where the story genre is" + request.form['genre'] + ", the stories main event is: " + request.form['event'] + ", express that the character felt like this: " + request.form['feeling'] + ", also express this lesson that they learned" + request.form['lesson'] + ", Express this story " + option +"."
     # Call the OpenAI API to generate completion
     response = openai.Completion.create(
         engine="text-davinci-003",

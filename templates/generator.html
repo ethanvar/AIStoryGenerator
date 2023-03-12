@@ -9,14 +9,18 @@
     <form action="/submit-form" method="post">
       <div class="form-container">
         <label for="name">What happened to you?</label>
-        <textarea name="event" type="event" id="event" rows="4" cols="50"></textarea>
+        <textarea name="event" type="text" id="event" rows="4" cols="50"></textarea>
         
-        <label for="name">What is your name?</label>
-        <input type="text" name="name" id="name">
+        <label for="name">How did it make you feel?</label>
+        <textarea name="feeling" type="text" id="feeling" rows="4" cols="50"></textarea>
+
+        <label for="lesson">What did you learn from this experience?</label>
+        <textarea name="lesson" type="text" id="lesson" rows="4" cols="50"></textarea>
 
         <label for="genre">What genre would you like your story to be in?</label>
         <input type="genre" name="genre" id="genre">
-
+        
+        <label for="option">In what way would you like this story to be expressed?</label>
         <select id="option" name="option" value="option">
           <option value="intellecually">Intellecually</option>
           <option value="angrily">Angrily</option>
