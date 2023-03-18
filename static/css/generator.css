@@ -1,8 +1,18 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .header {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    text-transform: uppercase;
+}
+
+p {
+    
 }
 
 .form-container {
@@ -10,18 +20,56 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .output-container {
-    padding-left: 100px;
-    padding-right: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px; 
 }
-  
 
-label, input, textarea, button {
+label {
+    margin-top: 10px;
+}
+
+input, textarea, select {
     margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding: 10px;
+    border: 1px solid rgb(152, 150, 150);
+    border-radius: 5px;
+
+}
+
+input {
+    width: 415px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    width: 435px;
+}
+
+button {
+    font-size: medium;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0077FF; /* Add a background color to the button */
+    color: #fff; /* Add a text color to the button */
+    border: none; /* Remove the border from the button */
+    padding: 10px 20px; /* Add padding to make the button look more spacious */
+    border-radius: 5px; /* Add rounded corners to the button */
+    cursor: pointer; /* Add a pointer cursor to the button */
+}
+
+button:hover {
+    background-color: #3299FF;
 }
