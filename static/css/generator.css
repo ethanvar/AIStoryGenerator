@@ -11,8 +11,14 @@ html {
     text-transform: uppercase;
 }
 
-p {
-    
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.grid-container > * {
+    margin-top: 20px;
 }
 
 .form-container {
@@ -20,15 +26,38 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .output-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 20px; 
+}
+
+.output-text {
+    border: 1px solid rgb(152, 150, 150);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    width: 70%;
+    min-height: 50%;
+    max-height: fit-content;
+}
+
+.output-text::before {
+    content: attr(data-placeholder);
+    color: #999;
+    font-style: italic;
+}
+  
+  .output-text:empty::before {
+    content: attr(data-placeholder);
+    color: #999;
+    font-style: italic;
+}
+
+.output-loading {
+    
 }
 
 label {
@@ -42,20 +71,12 @@ input, textarea, select {
     padding: 10px;
     border: 1px solid rgb(152, 150, 150);
     border-radius: 5px;
-
-}
-
-input {
-    width: 415px;
+    width: 80%;
 }
 
 input:focus, textarea:focus, select:focus {
     outline: none;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
-}
-
-select {
-    width: 435px;
 }
 
 button {
@@ -73,3 +94,11 @@ button {
 button:hover {
     background-color: #3299FF;
 }
+
+@media (max-width: 860px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+  
+  
