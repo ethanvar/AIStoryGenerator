@@ -3,7 +3,7 @@ from flask import Flask, session, render_template, request, g
 
 app = Flask(__name__)
 
-openai.api_key = "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"
+openai.api_key = "INSERT API KEY HERE"
 
 @app.route('/')
 def hello_world():
